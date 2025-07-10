@@ -1,0 +1,15 @@
+{
+  "name": "vercel-fullstack-fixed",
+  "scripts": {
+    "dev": "vite --config client/vite.config.ts",
+    "build": "vite build --config client/vite.config.ts",
+    "start": "vite preview --config client/vite.config.ts"
+  },
+  "devDependencies": {
+    "vite": "^4.5.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
