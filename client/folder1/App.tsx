@@ -77,18 +77,22 @@ function Router() {
   );
 }
 
+import { useEffect, useState } from 'react';
+
 function App() {
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    fetch('/api/hello')
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message));
+  }, []);
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
-        <TooltipProvider>
-          <div className="min-h-screen bg-background text-foreground">
-            <Router />
-            <Toaster />
-          </div>
-        </TooltipProvider>
-      </ThemeProvider>
-    </QueryClientProvider>
+    <div>
+      <h1>Fullstack App on Vercel</h1>
+      <p>Message from API: {message}</p>
+    </div>
   );
 }
 
